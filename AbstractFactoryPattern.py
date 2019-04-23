@@ -46,23 +46,23 @@ class MysqlDepartment(Department):
     def insert_department(self):
         print('MysqlDepartment insert department')
 
-#操作具体User数据库-Orcal
-class OrcaleUser(User):
+#操作具体User数据库-Oracle
+class OracleeUser(User):
 
     def get_user(self):
-        print('OrcalUser get User')
+        print('OracleUser get User')
 
     def insert_user(self):
-        print('OrcalUser insert User')
+        print('OracleUser insert User')
 
-#操作具体Department数据库类-Orcal
-class OrcaleDepartment(Department):
+#操作具体Department数据库类-Oracle
+class OracleeDepartment(Department):
 
     def get_department(self):
-        print('OrcalDepartment get department')
+        print('OracleDepartment get department')
 
     def insert_department(self):
-        print('OrcalDepartment insert department')
+        print('OracleDepartment insert department')
 
 #抽象工厂类
 class AbstractFactory(object):
@@ -81,22 +81,22 @@ class MysqlFactory(AbstractFactory):
     def create_department(self):
         return MysqlDepartment()
 
-class OrcaleFactory(AbstractFactory):
+class OracleeFactory(AbstractFactory):
 
     def create_user(self):
-        return OrcaleUser()
+        return OracleeUser()
 
     def create_department(self):
-        return OrcaleDepartment()
+        return OracleeDepartment()
 
 if __name__ == "__main__":
 
-    db = sys.argv[1]
+    db = input('请输入数据库类型(仅支持Mysql和Oracle)：')
     myfactory = ''
     if db == 'Mysql':
         myfactory = MysqlFactory()
-    elif db == 'Orcal':
-        myfactory = OrcaleFactory()
+    elif db == 'Oracle':
+        myfactory = OracleeFactory()
     else:
         print("不支持的数据库类型")
         exit(0)

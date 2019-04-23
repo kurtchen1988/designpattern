@@ -66,9 +66,9 @@ class OperationFactory(object):
 if __name__ == "__main__":
     ch = ''
     while not ch == 'q':
-        num1 = input('请输入第一个数值:  ')
+        num1 = int(input('请输入第一个数值:  '))
         oper = str(input('请输入一个四则运算符:  '))
-        num2 = input('请输入第二个数值:  ')
+        num2 = int(input('请输入第二个数值:  '))
         # Operation(num1,num2)
         OF = OperationFactory()
         oper_obj = OF.choose_oper(oper)

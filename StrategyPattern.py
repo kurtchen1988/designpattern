@@ -53,14 +53,14 @@ class Context(object):
 
 
 if __name__ == '__main__':
-    money = input("原价: ")
+    money = int(input("原价: "))
     strategy = {}
     strategy[1] = Context(CashNormal())
     strategy[2] = Context(CashRebate(0.8))
     strategy[3] = Context(CashReturn(100,10))
-    mode = input("选择折扣方式: 1) 原价 2) 8折 3) 满100减10: ")
+    mode = int(input("选择折扣方式: 1) 原价 2) 8折 3) 满100减10: "))
     if mode in strategy:
-        csuper = strategy[mode]
+        csuper = strategy[int(mode)]
     else:
         print("不存在的折扣方式")
         csuper = strategy[1]
